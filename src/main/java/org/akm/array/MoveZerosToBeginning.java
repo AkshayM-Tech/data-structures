@@ -9,6 +9,10 @@ import java.util.Arrays;
  */
 public class MoveZerosToBeginning {
     public static void main(String[] args) {
+
+        System.err.println(19 / 5);
+
+        System.exit(0);
         int[][] input = {{0,1,0,3,12}, {0}, {1,2,0,3,4,0,5,6,0,0,0,7}};
 
         for (int[] array : input){
