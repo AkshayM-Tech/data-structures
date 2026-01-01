@@ -24,7 +24,7 @@ import java.util.Arrays;
 public class LeftRotateByDPlaces {
     public static void main(String[] args) {
         int[] array = {1,2,3,4,5};
-        int d = 7;
+        int d = 0;
         int n = array.length;
 
         leftRotate(array, n, d);
@@ -33,8 +33,13 @@ public class LeftRotateByDPlaces {
     private static void leftRotate(int[] array, int n, int d) {
         // Edge case to check if array is null OR array size == d OR d == 0
         // If array size == d OR d == 0 then array remains unchanged.
-        if (array == null || array.length == d || d == 0)
+        if (array == null)
             return;
+        if ( array.length == d || d == 0) {
+            System.err.println("Before Array : "+ Arrays.toString(array));
+            return;
+        }
+
         // If d > array.length then
         if (d > n)
             d = d % n;
