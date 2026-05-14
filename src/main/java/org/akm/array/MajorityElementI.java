@@ -24,21 +24,18 @@ public class MajorityElementI {
 
         for (int[] array : data) {
             System.err.println("======================BRUTE FORCE=================================");
-            bruteForceApproach(array);
+            System.err.println("I/P : "+ Arrays.toString(array)+" ----> O/P : "+bruteForceApproach(array));
             System.err.println("======================BETTER=================================");
-            betterApproach(array);
+            System.err.println("I/P : "+ Arrays.toString(array)+" ----> O/P : "+betterApproach(array));
             System.err.println("======================OPTIMAL=================================");
-            optimalApproach(array);
+            System.err.println("I/P : "+ Arrays.toString(array)+" ----> O/P : "+optimalApproach(array));
         }
     }
 
-    private static void bruteForceApproach(int[] array) {
+    private static int bruteForceApproach(int[] array) {
         int n = array.length;
         int majority = n / 2;
         int count = 0;
-
-        System.err.println("I/P : "+ Arrays.toString(array));
-        System.err.println("Majority : " + majority);
 
         for (int i = 0; i < n; i++) {
             int currentElement = array[i];
@@ -48,18 +45,16 @@ public class MajorityElementI {
                 }
             }
             if (count > majority) {
-                System.err.println("O/P : "+currentElement);
-                break;
+                return array[i];
             }
         }
+        return -1;
     }
 
-    private static void betterApproach(int[] array) {
+    private static int betterApproach(int[] array) {
         int n = array.length;
         int majority = n / 2;
         Map<Integer, Integer> map = new HashMap<>();
-
-        System.err.println("I/P : "+ Arrays.toString(array));
 
         for (int i = 0; i < n; i++) {
             if (map.containsKey(array[i])) {
@@ -69,18 +64,16 @@ public class MajorityElementI {
             }
 
             if (map.get(array[i]) > majority) {
-                System.err.println("O/P : "+array[i]);
-                break;
+                return array[i];
             }
         }
+        return -1;
     }
 
-    private static void optimalApproach(int[] array) {
+    private static int optimalApproach(int[] array) {
         int n = array.length;
         int count = 0;
         int candidate = -1;
-
-        System.err.println("I/P : "+ Arrays.toString(array));
 
         for(int i = 0; i < n; i++){
             if(count == 0){
@@ -93,6 +86,6 @@ public class MajorityElementI {
                 count--;
             }
         }
-        System.err.println("I/P : "+ candidate);
+        return candidate;
     }
 }

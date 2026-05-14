@@ -1,4 +1,4 @@
-package basic;
+package basic.math;
 
 /*
     Write a program to reverse the digits of a given integer.
@@ -26,7 +26,6 @@ public class ReverseDigits {
     */
     private static int reverseDigits(int n) {
         int res = 0;
-
         while (n != 0) {
             int rem = n % 10;
 

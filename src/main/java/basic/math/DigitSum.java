@@ -1,4 +1,4 @@
-package basic;
+package basic.math;
 
 /*
     Write a program to calculate the sum of digits in a given integer.

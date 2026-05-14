@@ -1,8 +1,8 @@
-package basic;
+package basic.math;
 
-public class CheckPrimeNumber {
+public class IsPrimeNumber {
     public static void main(String[] args) {
-        int n = 2;
+        int n = 5;
 
         if (n <= 1) {
             System.out.println(n + " is not a prime number");
